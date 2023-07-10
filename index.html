@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokéVirtus</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font -->
+    <link href="https://api.fontshare.com/v2/css?f[]=panchang@200,500,700,300,400,800,600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <p>PokéVirtus</p>
+            </div>
+            <div class="social">
+                <a href="/"><img src="./assets/icons8-github.svg" alt="github"></a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Pokemon of the day -->
+        <section class="landing">
+            <div class="landing-left">
+                <div class="day">
+                    <div class="line"></div>
+                    <p>Pokemon of the day</p>
+                </div>
+                <!-- pokemon of the day details -->
+                <div class="landing-details">
+                    <h2 id="landName">Pikachu</h2>
+                    <p id="landType">saber</p>
+                    <section class="landing-abilities">
+                        <div class="ability-item">
+                            <h4 id="landHp">97</h4>
+                            <p>HP</p>
+                        </div>
+                        <div class="ability-item">
+                            <h4 id="landAttack">107</h4>
+                            <p>Attack</p>
+                        </div>
+                        <div class="ability-item">
+                            <h4 id="landDefense">101</h4>
+                            <p>Defense</p>
+                        </div>
+                        <div class="ability-item">
+                            <h4 id="landSpeed">79</h4>
+                            <p>Speed</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="landing-right">
+                <div class="landing-img">
+                    <img src="./assets/pikachu.png" alt="pokemon" id="landImg">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html>
