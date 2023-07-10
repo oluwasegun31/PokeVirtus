@@ -103,3 +103,71 @@ main{
     height: 100%;
     object-fit: cover;
 }
+
+@media screen and (max-width: 1050px) {
+    .landing-details > h2{
+        font-size: 3.5em;
+    }
+    .landing-details > p{
+        font-size: 2em;
+    }   
+    .landing-img{
+        width: 350px;
+        height: 370px;
+    }
+}
+@media screen and (max-width: 800px) {
+    .landing{
+        flex-direction: column;
+    }
+    .landing-details{
+        margin-top: 12px;
+    }
+    .landing-abilities{
+        margin-top: 1rem;
+    }
+    .landing .landing-left{
+        padding: 1em 0.2em 0;
+    }
+    .landing-right{
+        padding: 0;
+    }
+}
+@media screen and (max-width: 500px) {
+    nav .logo{
+        font-size: 1em;
+    }
+    .day{
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .line{
+        width: 14px;
+        margin-right: 5px;
+    }
+    .landing{
+        padding: 0 1em 0;
+        height: 90vh;
+        justify-content: space-evenly;
+    }
+    .landing-details > h2{
+        font-size: 2em;
+    }
+    .landing-details > p{
+        font-size: 1em;
+    }
+    .landing-abilities{
+        gap: 1rem 2rem;
+    }
+    .ability-item h4{
+        font-size: 16px;
+        margin-right: 12px;
+    }
+    .ability-item > p{
+        font-size: 12px;
+    }
+    .landing-img{
+        width: 290px;
+        height: 270px;
+    }
+}

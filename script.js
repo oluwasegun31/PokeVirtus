@@ -9,7 +9,7 @@ const landSpeed = document.querySelector('#landSpeed');
 
 async function pokemonOfTheDay(){
     try{
-        let response = await fetch('https://pokeapi.co/api/v2/pokemon/pikachu');
+        let response = await fetch('https://pokeapi.co/api/v2/pokemon/800');
         if(!response.ok){
             throw new Error(`${response.status}: Unable to Load`);
         }
