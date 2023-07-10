@@ -167,7 +167,8 @@ main{
         font-size: 12px;
     }
     .landing-img{
-        width: 290px;
+        width: 250px;
         height: 270px;
+        overflow: hidden;
     }
 }
