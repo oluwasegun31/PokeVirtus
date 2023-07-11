@@ -7,8 +7,24 @@
     <link rel="stylesheet" href="style.css">
     <!-- Font -->
     <link href="https://api.fontshare.com/v2/css?f[]=panchang@200,500,700,300,400,800,600&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@1,800,500,100,700,400,300,200,900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Overlay Loader -->
+    <h1 class="counter">0</h1>
+    <section class="overlay">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </section>
+    <!-- Navbar -->
     <header>
         <nav>
             <div class="logo">
@@ -24,7 +40,7 @@
         <section class="landing">
             <div class="landing-left">
                 <div class="day">
-                    <div class="line"></div>
+                    <div class="pline"></div>
                     <p>Pokemon of the day</p>
                 </div>
                 <!-- pokemon of the day details -->
@@ -59,6 +75,10 @@
         </section>
     </main>
 
+
+    <!-- gsap 3 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./animate.js"></script>
     <script src="./script.js"></script>
 </body>
 </html>

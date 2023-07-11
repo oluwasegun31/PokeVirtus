@@ -9,14 +9,14 @@ const landSpeed = document.querySelector('#landSpeed');
 
 async function pokemonOfTheDay(){
     try{
-        let response = await fetch(`https://pokeapi.co/api/v2/pokemon/10`);
+        let response = await fetch(`https://pokeapi.co/api/v2/pokemon/1`);
         // to throw an error if response is false
         if(!response.ok){
             throw new Error(`${response.status}: Unable to Load`);
         }
         let data = await response.json();
         // pokemon of the day name
-        landingName.textContent = data.name;
+        landingName.textContent = await data.name;
         //pokemon of the day type
         landingType.textContent = data.types[0].type.name;
         // image for pokemon of the day
