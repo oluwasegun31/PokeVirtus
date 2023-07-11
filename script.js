@@ -8,8 +8,10 @@ const landDefense = document.querySelector('#landDefense');
 const landSpeed = document.querySelector('#landSpeed');
 
 async function pokemonOfTheDay(){
+    // to generate random numbers
+    let randomNum = Math.floor(Math.random() * (1010 - 1)) + 1
     try{
-        let response = await fetch(`https://pokeapi.co/api/v2/pokemon/1`);
+        let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomNum}`);
         // to throw an error if response is false
         if(!response.ok){
             throw new Error(`${response.status}: Unable to Load`);
