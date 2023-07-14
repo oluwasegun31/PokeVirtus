@@ -47,14 +47,20 @@ gsap.from('.ability-item h4', 0.8,{
     ease: 'power3.out',
 })
 //landing details
-gsap.from('#landName, #landType', 0.8, {
+gsap.from('#landName, #landType', 1.2, {
     delay: 4,
     x: 700,
     ease:'power3.out' 
 })
 //landing img
-gsap.from('#landImg', 1.5,{
-    delay: 4.1,
+gsap.from('#landImg', 2.0,{
+    delay: 4.5,
     scale: 0,
     ease: 'power3.out',
+})
+//arrow
+gsap.from('.arrow', 2,{
+    delay: 5,
+    opacity: 0,
+    ease:'power3.out',
 })

@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PokéVirtus</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <!-- Font -->
-    <link href="https://api.fontshare.com/v2/css?f[]=panchang@200,500,700,300,400,800,600&display=swap" rel="stylesheet">
-    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@1,800,500,100,700,400,300,200,900&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=panchang@200,500,700,300,400,800,600&display=swap"
+        rel="stylesheet" />
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@1,800,500,100,700,400,300,200,900&display=swap"
+        rel="stylesheet" />
 </head>
+
 <body>
     <!-- Overlay Loader -->
     <h1 class="counter">0</h1>
@@ -31,13 +35,13 @@
                 <p>PokéVirtus</p>
             </div>
             <div class="social">
-                <a href="https://github.com/oluwasegun31"><img src="./assets/github.svg" alt="github"></a>
+                <a href="https://github.com/oluwasegun31"><img src="./assets/github.svg" alt="github" /></a>
             </div>
         </nav>
     </header>
     <main>
         <!-- Pokemon of the day -->
-        <section class="landing">
+        <section class="landing section">
             <div class="landing-left">
                 <div class="day">
                     <div class="pline"></div>
@@ -69,16 +73,25 @@
             </div>
             <div class="landing-right">
                 <div class="landing-img">
-                    <img src="./assets/pikachu.png" alt="pokemon" id="landImg">
+                    <img src="./assets/pikachu.png" alt="pokemon" id="landImg" />
                 </div>
             </div>
+            <div class="arrow">
+                <img src="./assets/keyboard_double_arrow_down_FILL0_wght500_GRAD200_opsz48.svg" alt="arrow" />
+            </div>
         </section>
+        <!-- Search pokemon -->
+        <!-- <section class="searchPokemon section">
+
+        </section> -->
     </main>
 
-
     <!-- gsap 3 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./animate.js"></script>
     <script src="./script.js"></script>
 </body>
+
 </html>

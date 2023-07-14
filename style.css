@@ -3,11 +3,12 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Panchang', sans-serif;
+    scroll-behavior: smooth;
 }
 body{
     background-color: #f1f0f0;
     max-width: 80rem;
-    width: 100%;
+    max-width: 100%;
 }
 /* Overlay */
 .overlay{
@@ -41,7 +42,7 @@ body{
 /* Navbar */
 header{
     width: 100%;
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     background-color: #f1f0f0;
@@ -58,13 +59,13 @@ nav{
     background-color: #f1f0f0;
 }
 nav .logo{
-    font-size: 1.5em;
+    font-size: 1.2rem;
     font-weight: 600;
     cursor: default;
 }
 nav .social{
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
 }
 .social a img{
     width: 100%;
@@ -72,16 +73,21 @@ nav .social{
     object-fit: cover;
 }
 main{
-    margin: 5rem auto 0 ;
-    max-width: 1200px;
+    margin: 0 auto;
+    max-width: 1400px;
 }
+.section{
+    position: sticky;
+    height: 90vh;
+}
+/* LANDING SECTION */
 .landing{
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 .landing .landing-left{
-    padding: 5rem 0 0;
+    padding: 2rem 0 0;
     overflow-x: hidden;
 }
 .day{
@@ -127,12 +133,10 @@ main{
     font-size: 24px;
     margin-right: 12px;
 }
-.landing-right{
-    padding: 2rem 0 0;
-}
 .landing-img{
     width: 420px;
     height: 450px;
+    padding: 1rem 0 0;
     overflow: hidden;
 }
 .landing-img img{
@@ -142,7 +146,10 @@ main{
     transform-origin: bottom right;
     z-index: 1;
 }
-
+.arrow{
+    position: absolute;
+    bottom: 0;
+}
 @media screen and (max-width: 1050px) {
     .landing-details > h2{
         font-size: 3.5em;
@@ -168,13 +175,22 @@ main{
     .landing .landing-left{
         padding: 1em 0.2em 0;
     }
-    .landing-right{
+    .landing-img{
         padding: 0;
+        width: 300px;
+        height: 320px;
     }
 }
 @media screen and (max-width: 500px) {
+    nav{
+        padding: 12px;
+    }
     nav .logo{
         font-size: 1em;
+    }
+    nav .social{
+        width: 30px;
+        height: 30px;
     }
     .day{
         font-size: 16px;
@@ -186,7 +202,6 @@ main{
     }
     .landing{
         padding: 0 1em 0;
-        height: 90vh;
         justify-content: space-evenly;
     }
     .landing-details > h2{
@@ -196,8 +211,8 @@ main{
         font-size: 1em;
     }
     .landing-abilities{
-        grid-template-columns: 120px 120px;
-        gap: 1rem 2rem;
+        grid-template-columns: 130px 130px;
+        gap: 1rem;
     }
     .ability-item h4{
         font-size: 16px;
