@@ -41,3 +41,15 @@ async function pokemonOfTheDay(){
     }
 }
 pokemonOfTheDay()
+
+/////////////////////////////////////SEARCH POKEMON///////////////////////////////////////
+const searchBtn = document.querySelector('#searchBtn');
+const searchInput = document.querySelector('#inputSearch');
+
+// to enable the active class for the input when btn is clicked but not submit the input
+if(!searchInput.classList.contains('active')){
+    searchBtn.addEventListener('click', ()=> {
+        searchInput.classList.add('active');
+        searchBtn.style.backgroundColor = 'inherit';
+    });
+};
