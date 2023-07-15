@@ -10,13 +10,13 @@ body{
     max-width: 80rem;
     max-width: 100%;
 }
-body::-webkit-scrollbar, html::-webkit-scrollbar {
+body::-webkit-scrollbar, html::-webkit-scrollbar, *::-webkit-scrollbar {
     width: 0px;
 }
-body::-webkit-scrollbar-track, html::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track, html::-webkit-scrollbar-track, *::-webkit-scrollbar-track {
     background: transparent;
 }
-body::-webkit-scrollbar-thumb, html::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb, html::-webkit-scrollbar-thumb, *::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0);
 }
 /* Overlay */
@@ -161,12 +161,15 @@ main{
 }
 /* Pokemon Search */
 .searchPokemon{
+    max-width: 1200px;
     height: 100vh;
+    margin: 0 auto;
     border: 3px solid black;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    padding: 0 0.5em;
 }
 .search{
     display: flex;
@@ -207,6 +210,84 @@ main{
     width: 100%;
     height: 100%;
 }
+.searchName{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 1rem;
+}
+.searchName h2{
+    font-size: 3.4rem;
+    line-height: 1;
+    text-transform: capitalize;
+    color: darkcyan;
+}
+.searchName p{
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+.search-details{
+    display: grid;
+    width: 100%;
+    height: 70vh;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1fr;
+    margin-top: 10px;
+}
+.stats, .ability{
+    margin: 2rem 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.stats .statLine, .ability .abilityLine{
+    width: 120px;
+    height: 2px;
+    background-color: darkcyan;
+    margin-right: 10px;
+}
+.stats > p, .ability > p{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.searchStat{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem 0.6rem;
+    place-items: center flex-start;
+    margin-top: 1rem;
+}
+.weight, .height, .baseExp, .hp, .attack, .defense, .specialAtk, .specialDef, .speed{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.weight > h4, .height > h4, .baseExp > h4, .hp > h4, .attack > h4, .defense > h4, .specialAtk > h4, .specialDef > h4, .speed > h4{
+    font-size: 1.6rem;
+    margin-right: 10px;
+    line-height: 1.2;
+    border-bottom: 1.5px solid #026969;
+}
+.weight > p, .height > p, .baseExp > p, .hp > p, .attack > p, .defense > p, .specialAtk > p, .specialDef > p, .speed > p{
+    font-size: 14px;
+    color: #026969;
+}
+.searchAbilItem{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.searchAbilItem > img{
+    width: 30px;
+    height: 30px;
+    margin-right: 1rem;
+}
+.searchAbilItem > p{
+    font-size: 1rem;
+    font-weight: 600;
+}
 @media screen and (max-width: 1050px) {
     .landing-details > h2{
         font-size: 3.5em;
@@ -220,6 +301,9 @@ main{
     }
 }
 @media screen and (max-width: 800px) {
+    .section{
+        height: 93vh;
+    }
     .landing{
         flex-direction: column;
     }
@@ -236,6 +320,15 @@ main{
         padding: 0;
         width: 300px;
         height: 320px;
+    }
+
+    .search-details{
+        display: grid;
+        width: 100%;
+        height: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        margin-top: 1rem;
     }
 }
 @media screen and (max-width: 500px) {
@@ -268,7 +361,7 @@ main{
         font-size: 1em;
     }
     .landing-abilities{
-        grid-template-columns: 130px 130px;
+        grid-template-columns: 140px 140px;
         gap: 1rem;
     }
     .ability-item h4{
@@ -287,5 +380,39 @@ main{
     .search input.active{
         width: 60vw;
         transition: all 0.5s;
+    }
+    .searchName h2{
+        font-size: 2.1rem;
+    }
+    .searchName p{
+        font-size: 1rem;
+    }
+    .stats, .ability{
+        margin: 1rem 0;
+    }
+    .stats .statLine, .ability .abilityLine{
+        width: 100px;
+    }
+    .stats > p, .ability > p{
+        font-size: 1rem;
+    }
+    .searchStat{
+        grid-template-columns: repeat(auto-fill, 120px);
+        gap: 1.5rem 0.6rem;
+        margin: 1rem auto 0;
+        justify-content: center;
+    }
+    .weight > h4, .height > h4, .baseExp > h4, .hp > h4, .attack > h4, .defense > h4, .specialAtk > h4, .specialDef > h4, .speed > h4{
+        font-size: 1.3rem;
+    }
+    .weight > p, .height > p, .baseExp > p, .hp > p, .attack > p, .defense > p, .specialAtk > p, .specialDef > p, .speed > p{
+        font-size: 12px;
+    }
+    .searchAbilItem > img{
+        width: 20px;
+        height: 20px;
+    }
+    .searchAbilItem > p{
+        font-size: 16px;
     }
 }
