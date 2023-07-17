@@ -13,13 +13,12 @@ async function pokemonOfTheDay(){
 
     try{
         let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomNum}`);
-        // to throw an error if response is false
-        if(!response.ok){
-            throw new Error(`${response.status}: Unable to Load`);
-        };
         let data = await response.json();
         // pokemon of the day name
         landingName.textContent = await data.name;
+        if(data.name.length >= 10 && window.innerWidth > 1050){
+            landingName.style.fontSize = '4em'
+        }
         //pokemon of the day type
         landingType.textContent = data.types[0].type.name;
 
@@ -35,7 +34,6 @@ async function pokemonOfTheDay(){
         landAttack.textContent = data.stats[1].base_stat;
         landDefense.textContent = data.stats[2].base_stat;
         landSpeed.textContent = data.stats[5].base_stat;
-        console.log(data)
     }catch (err){
         console.error(err.message)
     }
@@ -57,7 +55,9 @@ const searchSpecialAtk = document.querySelector('.specialAtk > h4');
 const searchSpecialDef = document.querySelector('.specialDef > h4');
 const searchSpeed = document.querySelector('.speed > h4');
 const searchAbility = document.querySelector('.searchAbilities');
-const searchImg = document.querySelector('#searchImg')
+const searchImg = document.querySelector('#searchImg');
+const errorContainer = document.querySelector('.error');
+const errorMessage = document.querySelector('.error > p')
 
 // to get the input value when the search btn is clicked and passing the value to the fetch
 searchInput.value = 1;
@@ -76,9 +76,6 @@ async function searchPokemon(){
     let inputVal = searchInput.value.toLowerCase();
     try{
         let searchResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${inputVal}`);
-        if(!searchResponse.ok){
-            throw new Error('unable to fetch');
-        }
         let searchData = await searchResponse.json();
         console.log(searchData)
 
@@ -114,7 +111,16 @@ async function searchPokemon(){
             searchImg.src = searchData.sprites.other["official-artwork"].front_shiny;
         }
     }catch(err){
-        console.error(err.message)
-    }
+        // to display the error container and
+        errorContainer.style.display = 'flex';
+        if(err.message === 'Unexpected token N in JSON at position 0'){
+            errorMessage.textContent = `Incorrect id or name`;
+        }else{
+            errorMessage.textContent =`unable to fetch`
+        }
+        setTimeout(()=> {
+            errorContainer.style.display = 'none';
+        }, 3000);
+    };
 }
 

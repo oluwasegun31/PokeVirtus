@@ -299,6 +299,26 @@ main{
     height: 100%;
     object-fit: cover;
 }
+/* Error */
+.error{
+    padding: 10px;
+    background-color: #e27979;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-left: 10px solid red;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+}
+.error img{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
 @media screen and (max-width: 1050px) {
     .landing-details > h2{
         font-size: 3.5em;
@@ -448,5 +468,8 @@ main{
     .search-img{
         width: 290px;
         height: 300px;
+    }
+    .error{
+        top: 60px;
     }
 }
