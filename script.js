@@ -118,8 +118,6 @@ async function searchPokemon(){
         errorContainer.style.display = 'flex';
         if(err.message === 'Unexpected token N in JSON at position 0'){
             errorMessage.textContent = `Invalid id or name`;
-        }else{
-            errorMessage.textContent =`unable to fetch`
         }
         setTimeout(()=> {
             errorContainer.style.display = 'none';
