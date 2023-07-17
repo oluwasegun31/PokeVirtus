@@ -17,7 +17,7 @@ async function pokemonOfTheDay(){
         // pokemon of the day name
         landingName.textContent = await data.name;
         if(data.name.length >= 10 && window.innerWidth > 1050){
-            landingName.style.fontSize = '4em'
+            landingName.style.fontSize = '3em';
         }
         //pokemon of the day type
         landingType.textContent = data.types[0].type.name;
@@ -64,6 +64,10 @@ searchInput.value = 1;
 searchBtn.addEventListener('click', ()=> {
     if(searchInput.classList.contains('active')){
         searchPokemon();
+        setTimeout(()=> {
+            searchInput.classList.remove('active');
+            searchBtn.style.backgroundColor = 'darkcyan';
+        }, 3000)
     }else{
         searchInput.classList.add('active');
         searchBtn.style.backgroundColor = 'inherit';
@@ -77,7 +81,6 @@ async function searchPokemon(){
     try{
         let searchResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${inputVal}`);
         let searchData = await searchResponse.json();
-        console.log(searchData)
 
         // pokemon name and type
         searchName.textContent = searchData.name;
@@ -114,7 +117,7 @@ async function searchPokemon(){
         // to display the error container and
         errorContainer.style.display = 'flex';
         if(err.message === 'Unexpected token N in JSON at position 0'){
-            errorMessage.textContent = `Incorrect id or name`;
+            errorMessage.textContent = `Invalid id or name`;
         }else{
             errorMessage.textContent =`unable to fetch`
         }

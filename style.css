@@ -194,6 +194,7 @@ main{
     border: none;
     border-radius: 0;
     caret-color: darkcyan;
+    transition: all 0.5s;
 }
 .search input.active{
     width: 30vw;
@@ -207,6 +208,7 @@ main{
     border: 0;
     outline: 0;
     background-color: darkcyan;
+    transition: all 0.5s;
 }
 .search button img{
     width: 100%;
