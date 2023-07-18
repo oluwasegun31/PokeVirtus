@@ -5,6 +5,8 @@
     font-family: 'Panchang', sans-serif;
     scroll-behavior: smooth;
 }
+input, textarea, button, select, div, section, i, a{-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+a:focus, a:visited, a:active{outline: none;}
 body{
     background-color: #f1f0f0;
     max-width: 80rem;
@@ -449,7 +451,7 @@ main{
         font-size: 1rem;
     }
     .searchStat{
-        grid-template-columns: repeat(auto-fill, 120px);
+        grid-template-columns: repeat(auto-fill, 140px);
         gap: 1.5rem 0.6rem;
         margin: 1rem auto 0;
         justify-content: center;

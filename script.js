@@ -64,10 +64,11 @@ searchInput.value = 1;
 searchBtn.addEventListener('click', ()=> {
     if(searchInput.classList.contains('active')){
         searchPokemon();
+        document.body.style.opacity = '0.5'
         setTimeout(()=> {
             searchInput.classList.remove('active');
             searchBtn.style.backgroundColor = 'darkcyan';
-        }, 3000)
+        }, 1000)
     }else{
         searchInput.classList.add('active');
         searchBtn.style.backgroundColor = 'inherit';
@@ -83,8 +84,15 @@ async function searchPokemon(){
         let searchData = await searchResponse.json();
 
         // pokemon name and type
-        searchName.textContent = searchData.name;
-        searchType.textContent = searchData.types[0].type.name;
+        searchName.textContent = await searchData.name;
+        searchType.textContent = await searchData.types[0].type.name;
+
+        // search images
+        if(searchData.sprites.other["official-artwork"].front_shiny === null){
+            searchImg.src = await searchData.sprites.other["official-artwork"].front_default;
+        }else{
+            searchImg.src = await searchData.sprites.other["official-artwork"].front_shiny;
+        }
 
         //pokemon stats
         searchWeight.textContent = searchData.weight;
@@ -107,12 +115,7 @@ async function searchPokemon(){
             );
         }).join('');
 
-        // search images
-        if(searchData.sprites.other["official-artwork"].front_shiny === null){
-            searchImg.src = searchData.sprites.other["official-artwork"].front_default;
-        }else{
-            searchImg.src = searchData.sprites.other["official-artwork"].front_shiny;
-        }
+        document.body.style.opacity = '1';
     }catch(err){
         // to display the error container and
         errorContainer.style.display = 'flex';
@@ -120,6 +123,7 @@ async function searchPokemon(){
         setTimeout(()=> {
             errorContainer.style.display = 'none';
         }, 3000);
+        document.body.style.opacity = '1';
     };
 }
 

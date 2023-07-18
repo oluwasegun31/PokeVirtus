@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,7 +11,6 @@
     <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@1,800,500,100,700,400,300,200,900&display=swap"
         rel="stylesheet" />
 </head>
-
 <body>
     <!-- Overlay Loader -->
     <h1 class="counter">0</h1>
@@ -77,11 +75,11 @@
                 </div>
             </div>
             <div class="arrow">
-                <img src="./assets/keyboard_double_arrow_down_FILL0_wght500_GRAD200_opsz48.svg" alt="arrow" />
+                <a href="#searchPoke"><img src="./assets/keyboard_double_arrow_down_FILL0_wght500_GRAD200_opsz48.svg" alt="arrow" /></a>
             </div>
         </section>
         <!-- Search pokemon -->
-        <section class="searchPokemon section">
+        <section class="searchPokemon section" id="searchPoke">
             <div class="search">
                 <input type="text" name="input" id="inputSearch" class="inputSearch" placeholder="input id or name">
                 <button id="searchBtn"><img src="./assets/icons8-search-48.png" alt="search"></button>
@@ -166,5 +164,4 @@
     <script src="./animate.js"></script>
     <script src="./script.js"></script>
 </body>
-
 </html>
